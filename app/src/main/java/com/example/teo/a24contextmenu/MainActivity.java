@@ -2,6 +2,8 @@ package com.example.teo.a24contextmenu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -24,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
 
         //Dùng để gọi trình đơn ngữ cảnh
         registerForContextMenu(listView1);
-
     }
+
+    //Gọi menu context
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        //Đặt tiêu đề cho ContextMenu
+        menu.setHeaderTitle("Select The Action");
+        menu.add(0, v.getId(), 0, "Call");//groupId, itemId, order, title
+        menu.add(0, v.getId(), 0, "SMS");
+    }
+
 }
