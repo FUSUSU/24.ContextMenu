@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Khởi tạo ArraryAdapter truyền dữ liệu mảng contacts vào nó
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, contacts);
+        //Truyền dữ liệu từ Adapter vào listview với phương thức setAdapter()
+        listView1.setAdapter(adapter);
 
     }
 }
