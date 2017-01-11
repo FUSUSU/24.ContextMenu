@@ -3,9 +3,11 @@ package com.example.teo.a24contextmenu;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ListView listView1;
@@ -38,4 +40,17 @@ public class MainActivity extends AppCompatActivity {
         menu.add(0, v.getId(), 0, "SMS");
     }
 
+
+    //Bắt sự kiện nêu title
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        if (item.getTitle() == "Call"){
+            Toast.makeText(getApplicationContext(), "Calling code", Toast.LENGTH_LONG).show();
+        } else if (item.getTitle() == "SMS"){
+            Toast.makeText(getApplicationContext(), "Sending sms code", Toast.LENGTH_LONG).show();
+        } else {
+            return false;
+        }
+        return true;
+    }
 }
