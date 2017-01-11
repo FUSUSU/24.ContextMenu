@@ -22,5 +22,8 @@ public class MainActivity extends AppCompatActivity {
         //Truyền dữ liệu từ Adapter vào listview với phương thức setAdapter()
         listView1.setAdapter(adapter);
 
+        //Dùng để gọi trình đơn ngữ cảnh
+        registerForContextMenu(listView1);
+
     }
 }
